@@ -1,0 +1,133 @@
+
+<!-- 
+<ng-template [ngIf]="imageTypeShow">
+  <ng-template [ngIf]="imageToShow">
+      <img [src]="imageToShow.photo" class="img-thumbnail" *ngIf="!isImageLoading;">
+  </ng-template>
+</ng-template>
+
+ -->
+
+
+
+<div class="row">
+    <div class="col-6">   
+            <section class="row">
+                    <div class="col-1"> <img  src="../../assets/images/profile.png" class="mr-3" alt="Profile Pic" width="100px" height="100px" style="border-radius: 50%"></div>
+                     <div class="col-3 ml-5">
+                             <h1 style="font-family:cursive;margin-top:20px;padding:5px;">Username</h1>
+                     </div>
+             </section>
+    </div>
+    <div class="col-6">
+            <div class="btn-group mr-5" style="margin-bottom:-160px;" role="group" aria-label="Basic example" >
+                <a [routerLink]="['/MyMedia']" ><button type="button" class="btn btn-dark " style="width:200px;">All</button></a>
+              <a [routerLink]="['/Images']" ><button type="button" class="btn btn-dark " style="width:200px;">Images</button></a>
+              <a [routerLink]="['/Videos']"><button type="button" class="btn btn-dark" style="width:200px;">Videos</button></a>
+            </div>
+
+    </div>
+</div>
+<hr>
+
+
+<div *ngFor='let p of src1'>
+   <img [src] = 'sanitize(p.url)' />
+   <h1>image :{{p.url}}</h1>
+</div>  
+
+
+<!-- <button (click)='print()'>bitt</button> -->
+
+
+
+
+
+
+
+
+<!-- <section class=" row ml-3 mr-5 ">
+<div class="col-3 pl-2 pr-2 mt-5">
+  <div style="height:200px;">
+    <img src="../../assets/images/i1.jpg" alt="image" class="img-fluid"width="200px" style="height:200px;">   
+  </div>
+  <div class="row mt-3" >   
+  <div class="col"><p> <i class="fa fa-heart ml-2" style="font-size:25px;"></i> 100 <i class="fa fa-heart ml-2 fa-rotate-180" style="font-size:25px;"></i> 20<i class="fa fa-comments ml-2" style="font-size:25px;"></i> 10 </p>
+  </div>
+</div>
+</div>
+<div class="col-3 pl-2 pr-2 mt-5">
+    
+      <div style="height:200px;">
+        <img src="../../assets/images/i2.jpg" alt="image"class="img-fluid"width="200px" style="height:200px;">  
+      </div>
+      <div class="row mt-3" >
+      <div class="col"><p> <i class="fa fa-heart ml-2" style="font-size:25px;"></i> 231 <i class="fa fa-heart ml-2 fa-rotate-180" style="font-size:25px;"></i> 46<i class="fa fa-comments ml-2" style="font-size:25px;"></i> 20 </p>
+      </div>
+    </div>
+  </div>
+  <div class="col-3 pl-2 pr-2 mt-5">
+     
+        <div style="height:200px;">
+          <video controls >
+            <source src="../../assets/videos/video1.mp4" type="video/mp4" width="200px" height="200px">
+            Your browser does not support the video tag.
+          </video> 
+        </div>
+        <div class="row mt-3" >
+          <div class="col"><p> <i class="fa fa-heart ml-2" style="font-size:25px;"></i> 43 <i class="fa fa-heart fa-rotate-180 ml-2" style="font-size:25px;"></i> 7<i class="fa fa-comments ml-2" style="font-size:25px;"></i> 1 </p>
+          </div>
+      </div>
+    </div>
+    <div class="col-3 pl-2 pr-2 mt-5">
+       
+          <div style="height:200px;">
+            <img src="../../assets/images/i4.jpg" alt="image"class="img-fluid"width="200px" style="height:200px;">  
+          </div>
+          <div class="row mt-3" >
+            <div class="col"><p> <i class="fa fa-heart ml-2" style="font-size:25px;"></i> 87 <i class="fa fa-heart ml-2 fa-rotate-180" style="font-size:25px;"></i> 53<i class="fa fa-comments ml-2" style="font-size:25px;"></i> 32 </p>
+            </div>
+        </div>
+      </div>
+</section>    
+<section class=" row ml-3 mr-5 ">
+  <div class="col-3 pl-2 pr-2 mt-5">
+    <div style="height:200px;">
+      <img src="../../assets/images/i5.jpg" alt="image"class="img-fluid"width="200px" style="height:200px;">   
+    </div>
+    <div class="row mt-3" >   
+    <div class="col"><p> <i class="fa fa-heart ml-2" style="font-size:25px;"></i> 564 <i class="fa fa-heart fa-rotate-180 ml-2" style="font-size:25px;"></i> 12<i class="fa fa-comments ml-2" style="font-size:25px;"></i> 200 </p>
+    </div>
+  </div>
+  </div>
+  <div class="col-3 pl-2 pr-2 mt-5">
+      
+        <div style="height:200px;">
+          <img src="../../assets/images/i6.jpg" alt="image"class="img-fluid"width="200px" style="height:200px;">  
+        </div>
+        <div class="row mt-3" >
+        <div class="col"><p> <i class="fa fa-heart ml-2" style="font-size:25px;"></i> 216 <i class="fa fa-heart fa-rotate-180 ml-2" style="font-size:25px;"></i> 85<i class="fa fa-comments ml-2" style="font-size:25px;"></i> 34 </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-3 pl-2 pr-2 mt-5">
+         
+      <div style="height:200px;">
+        <img src="../../assets/images/i7.jpg" alt="image" class="img-fluid"width="200px" style="height:200px;">  
+      </div>
+      <div class="row mt-3" >
+        <div class="col"><p> <i class="fa fa-heart ml-2" style="font-size:25px;"></i> 43 <i class="fa fa-heart fa-rotate-180 ml-2" style="font-size:25px;"></i> 11<i class="fa fa-comments ml-2" style="font-size:25px;"></i> 5 </p>
+        </div>
+    </div>
+  </div>
+      <div class="col-3 pl-2 pr-2 mt-5">
+         
+            <div style="height:200px;">
+              <img src="../../assets/images/i8.jpg" alt="image" class="img-fluid"width="200px" style="height:200px;">  
+            </div>
+            <div class="row mt-3" >
+              <div class="col"><p> <i class="fa fa-heart ml-2" style="font-size:25px;"></i> 1065 <i class="fa fa-heart fa-rotate-180 ml-2" style="font-size:25px;"></i> 754<i class="fa fa-comments ml-2" style="font-size:25px;"></i> 64 </p>
+              </div>
+          </div>
+        </div>
+  </section>    -->

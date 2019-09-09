@@ -1,0 +1,144 @@
+<section class="row">
+  <div class="col-1"> <img  src="../../assets/images/profile.png" class="img-fluid rounded float-left mr-3" alt="Profile Pic"style="width:100px;height:80px;"></div>
+     <div class="col-2">
+             <h1 style="font-family:cursive;margin-top:20px;padding:5px;">Username</h1>
+     </div>
+</section>
+<hr>
+<div class="row">
+<div class="select col-3 text-center p-5">
+ <h4 style="font-family:sans-serif;" class="m-5">Upload Media</h4>
+ <div class="btn-group-vertical  " role="group" aria-label="Basic example">
+   <a [routerLink]="['/UploadMedia']"><button type="button" class="btn btn-secondary active" style="width:200px;height:50px;">Single Media</button></a>
+   <a [routerLink]="['/UploadMMedia']"><button type="button" class="btn btn-secondary" style="width:200px;height:50px;">Multiple Media</button></a>
+ </div>
+</div>
+<div class="main col-9  ">
+ <div class="row p-5">    
+    <div class="col-7">
+       <h1 style="font-family:cursive;" >New Media Page</h1>
+       <form style="text-align:left;" class="mt-5">
+        <div class="form-group row">
+          <label for="browse" class="col-sm-2 col-form-label">Browse</label>
+          <!-- <div class="col-sm-10">
+            <input type="file"  class=" m-3 " name="file" id="browse" value="Browse"  (change)="onFileChanged($event)">
+            <div>
+             <input type="submit" readonly class="btn btn-lg btn-outline-secondary mr-3 ml-3" id="browse" value="Upload" (click)='onUpload()' >
+            </div>
+           </div> -->
+           <form (ngSubmit)="upload()" [formGroup]="form">
+            <input ng-model="file_upload" name="file" type="file" (change)="fileChange($event)" #fileInput>
+            <button type="submit"  >Submit</button>
+        </form> 
+        </div>
+               <div class="form-group row">
+                 <label for="title" class="col-sm-2 col-form-label">Title</label>
+                 <div class="col-sm-10">
+                   <input type="text" readonly class="form-control" id="title" placeholder="Enter Title">
+                 </div>
+               </div>
+               <div class="form-group row">
+                 <label for="description" class="col-sm-2 col-form-label">Description</label>
+                 <div class="col-sm-10">
+                     <textarea class="form-control" rows="5" id="description"></textarea>
+                 </div>
+               </div>
+               <div class="form-group row">
+                   <label for="tags" class="col-sm-2 col-form-label">Tags</label>
+                   <div class="col-sm-10">
+                     <input type="text" readonly class="form-control" id="tags">
+                   </div>
+                 </div>
+                 <div class="form-group row">
+                     <label for="effects" class="col-sm-2 col-form-label">Effects</label>
+                     <div class="col-sm-10">
+                       <div class="btn-group w-100 " role="group" aria-label="Basic example">
+                         <button type="button" class="btn btn-outline-secondary ">Sepia</button>
+                         <button type="button" class="btn btn-outline-secondary" >Grey</button>
+                         <button type="button" class="btn btn-outline-secondary " >Brightness</button>
+                         <button type="button" class="btn btn-outline-secondary">Contrast</button>
+                       </div>
+                     </div>
+                   </div>
+             </form>
+
+             <input type="URL" name="myURL" [(ngModel)]="myURL" placeholder="insert image URL here" (change)="onURLinserted() ">
+
+<img [src]="imageToShow" alt="Place image title">
+
+
+       <!-- <form-upload></form-upload>
+       <br/><br/>      
+       <list-upload></list-upload> -->
+
+
+
+        <!-- <form style="text-align:left;" class="mt-5" (ngSubmit)="onUpload()">
+                 <div class="form-group row">
+                     <label for="browse" class="col-sm-2 col-form-label">Browse</label>
+                     <div class="col-sm-10">
+                       <input type="file" [(ngModel)]="image" [ngModelOptions]="{standalone: true}" name="image" class=" m-3 " id="browse" value="Browse">
+                      
+                      </div>
+                   </div>
+                 <div class="form-group row">
+                   <label for="title" class="col-sm-2 col-form-label">Title</label>
+                   <div class="col-sm-10">
+                     <input type="text" [(ngModel)]="title" [ngModelOptions]="{standalone: true}" name="title" class="form-control" id="title" placeholder="Enter Title">
+                   </div>
+                 </div>
+                 <div class="form-group row">
+                   <label for="description" class="col-sm-2 col-form-label">Description</label>
+                   <div class="col-sm-10">
+                       <textarea class="form-control" [(ngModel)]="description" [ngModelOptions]="{standalone: true}" name="description" rows="5" id="description"></textarea>
+                   </div>
+                 </div>
+                 <div class="form-group row">
+                     <label for="tags" class="col-sm-2 col-form-label">Tags</label>
+                     <div class="col-sm-10">
+                       <input type="text" [(ngModel)]="tags" [ngModelOptions]="{standalone: true}"  class="form-control" name="tags" id="tags" placeholder="Select Tags">
+                     </div>
+                   </div>
+                   <div class="form-group row" >
+                       <label for="effects" class="col-sm-2 col-form-label">Effects</label>
+
+                        <div class="form-check ">
+                          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                          <label class="form-check-label mr-2" for="exampleRadios1">
+                            Sepia
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+                          <label class="form-check-label mr-2" for="exampleRadios2">
+                            Grey
+                          </label>
+                        </div>
+                        <div class="form-check ">
+                          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" >
+                          <label class="form-check-label mr-2" for="exampleRadios3">
+                            Brightness
+                          </label>
+                        </div>
+                        <div class="form-check ">
+                          <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option4" >
+                          <label class="form-check-label mr-2" for="exampleRadios3">
+                           Contrast
+                          </label>
+                        
+                       </div>
+                     </div>
+                     <div  class="form-group row">
+                      <input type="submit"  class="btn btn-lg btn-outline-secondary mr-3 ml-3" id="browse" value="Upload">
+                     </div>
+               </form>-->
+       </div>
+       <div class="col-1">
+        <h4 style="margin-top:200px;text-align:center;">OR</h4>
+      </div>
+      <div class="col-2 text-center w-100 mt-5" style="border:2px solid black">
+            <p style="margin-top:180px;">Drag & Drop here and Click on Upload</p>
+      </div>
+       </div>
+</div>
+</div>

@@ -1,0 +1,28 @@
+<section class="row">
+  <div class="col-1"> <img  src="../../assets/images/profile.png" class="img-fluid rounded float-left mr-3" alt="Profile Pic"style="width:150px;height:80px;"></div>
+     <div class="col-2">
+             <h1 style="font-family:cursive;margin-top:20px;padding:5px;">Username</h1>
+     </div>
+</section>
+<hr>
+<div class="row">
+<div class="select col-3 text-center p-5">
+  <h4 style="font-family:sans-serif;" class="m-5">Account</h4>
+  <div class="btn-group-vertical  " role="group" aria-label="Basic example">
+    <a [routerLink]="['/NewsFeed']"><button type="button" class="btn btn-outline-secondary  " style="width:200px;height:50px;">Newsfeed</button></a>
+    <a [routerLink]="['/BlockedAccounts']"><button type="button" class="btn btn-outline-secondary " style="width:200px;height:50px;">Blocked Accounts</button></a>
+    <a [routerLink]="['/AccountUpdate']"><button type="button" class="btn btn-outline-secondary" style="width:200px;height:50px;">Account Update</button></a>
+    <a [routerLink]="['/Search']"><button type="button" class="btn btn-outline-secondary active" style="width:200px;height:50px;">Search</button></a>
+    <a [routerLink]="['/']" (click) ="onLogout()"><button type="button" class="btn btn-outline-secondary " style="width:200px;height:50px;">Logout</button></a>
+  </div>
+</div>
+<div class=" form col-md-7 mt-5">
+   <div class="input-group md-form form-sm form-2 pl-0 mt-5">
+        <input class="form-control my-0 py-1 lime-border" type="text" placeholder="Search Media, Tags and Users" aria-label="Search">
+        <div class="input-group-append">
+          <span class="input-group-text lime lighten-2" id="basic-text1"><i class="fa fa-search text-grey"
+              aria-hidden="true"></i></span>
+        </div>
+      </div>
+</div>
+</div>

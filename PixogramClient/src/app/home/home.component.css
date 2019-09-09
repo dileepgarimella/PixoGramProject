@@ -1,0 +1,22 @@
+.jumbotron{
+    width:60%;
+    height:100%;
+    background-color: rgb(243, 242, 242);
+    text-align:center;
+    margin-top:-50px;
+    padding-top:250px;
+  }
+
+  button{
+    width:150px;
+    border-radius: 50px;
+  }
+  .carousel{
+    height:658px;
+    width:90%;
+    margin-left:100px;
+  }
+  img{
+    height:580px;
+    width:90%;
+  }

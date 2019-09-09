@@ -1,0 +1,47 @@
+<section class="row">
+  <div class="col-1"> <img  src="../../assets/images/profile.png" class="img-fluid rounded float-left mr-3" alt="Profile Pic"style="width:150px;height:80px;"></div>
+     <div class="col-2">
+             <h1 style="font-family:cursive;margin-top:20px;padding:5px;">Username</h1>
+     </div>
+</section>
+<hr>
+<div class="row">
+<div class="select col-3 text-center p-5">
+ <h4 style="font-family:sans-serif;" class="m-5">Account</h4>
+ <div class="btn-group-vertical  " role="group" aria-label="Basic example">
+  <a [routerLink]="['/NewsFeed']"><button type="button" class="btn btn-outline-secondary active" style="width:200px;height:50px;">Newsfeed</button></a>
+  <a [routerLink]="['/BlockedAccounts']"><button type="button" class="btn btn-outline-secondary " style="width:200px;height:50px;">Blocked Accounts</button></a>
+  <a [routerLink]="['/AccountUpdate']"><button type="button" class="btn btn-outline-secondary " style="width:200px;height:50px;">Account Update</button></a>
+  <a [routerLink]="['/Search']"><button type="button" class="btn btn-outline-secondary" style="width:200px;height:50px;">Search</button></a>
+  <a [routerLink]="['/']" (click) ="onLogout()"><button type="button" class="btn btn-outline-secondary" style="width:200px;height:50px;">Logout</button></a>
+</div>
+</div>
+<div style="margin-top:120px;margin-left:50px;">
+ <table class="table table-dark responsive mt-5" >
+     <thead>
+       <tr>
+         <th scope="col" width="100px;" >Date</th>
+         <th scope="col" width="100px;">Time</th>
+         <th scope="col" width="600px;">Activity</th>
+       </tr>
+     </thead>
+     <tbody>
+       <tr>
+         <td>Today</td>
+         <td>12:00</td>
+         <td>You shared A's photo.</td>
+       </tr>
+       <tr>
+         <td>4/8/2019</td>
+         <td>04:00</td>
+         <td>You liked B's photo.</td>
+       </tr>
+       <tr>
+         <td>3/8/2019</td>
+         <td>09:00</td>
+         <td>You Commented on C's Photo.</td>
+       </tr>
+     </tbody>
+   </table>
+</div>
+</div>

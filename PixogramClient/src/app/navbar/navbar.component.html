@@ -1,0 +1,41 @@
+
+<nav class="navbar navbar-expand-lg navbar bg-light" >
+    <a class="navbar-brand" href="Home.html" [routerLink]="['/']">
+     <img src="../../assets/images/logo.svg"  alt="Logo">
+   </a>
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+       <span class="navbar-toggler-icon"></span>   
+     </button>
+   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+     <ul class="navbar-nav navbar-left">
+       <li class="nav-item" *ngIf="authService.isLoggedin">
+         <a class="nav-link" [routerLink]="['/UploadMedia']" style= "color:black;" onMouseOver="this.style.color='white'" onMouseOut="this.style.color='black'">Upload Media</a>
+       </li>
+       <li class="nav-item" *ngIf="authService.isLoggedin">
+         <a class="nav-link"[routerLink]="['/MyMedia']" style= "color:black" onMouseOver="this.style.color='white'" onMouseOut="this.style.color='black'">My Media</a>
+       </li>
+       <li class="nav-item" *ngIf="authService.isLoggedin">
+         <a class="nav-link" [routerLink]="['/Follow']" style= "color:black" onMouseOver="this.style.color='white'" onMouseOut="this.style.color='black'">Followers/Following</a>
+       </li>    
+       <li class="nav-item" *ngIf="!authService.isLoggedin">
+        <a  [routerLink]="['/Register']"><button type="button" class="btn btn-dark mr-5" >Register</button></a>      
+      </li> 
+      <li class="nav-item" *ngIf="!authService.isLoggedin">
+        <a [routerLink]="['/Login']"><button type="button" class="btn btn-dark">Login</button></a>
+      </li> 
+
+     </ul>    
+       </div>
+       <div class="dropdown" *ngIf="authService.isLoggedin">
+         <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown">
+           My Account
+         </button>
+         <div class="dropdown-menu" >
+           <a class="dropdown-item" [routerLink]="['/NewsFeed']">Newsfeed</a>
+           <a class="dropdown-item" [routerLink]="['/BlockedAccounts']">Blocked Accounts</a>
+           <a class="dropdown-item" [routerLink]="['/AccountUpdate']">Account Update</a>
+           <a class="dropdown-item" [routerLink]="['/Search']">Search</a>
+           <a class="dropdown-item" [routerLink]="['/']" (click) ="onLogout()">Logout</a>
+         </div>
+       </div>
+ </nav>
